@@ -16,18 +16,30 @@ public class PlayerController : MonoBehaviour
     public GameObject spriteLeft;
     public GameObject spriteUp;
     public GameObject spriteDown;
+    private Animator animator;
+
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
+        
         MovePlayer();
         ShootBullet();
         UpdateSprite();
     }
+    
 
     private void MovePlayer()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("horizontal", horizontalInput);
         float verticalInput = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("vertical", verticalInput);
         moveDirection = new Vector2(horizontalInput, verticalInput).normalized;
 
         //Obtener la posición actual del jugador
@@ -41,6 +53,8 @@ public class PlayerController : MonoBehaviour
 
         //Calcular la nueva posición del jugador
         Vector3 newPosition = currentPosition + new Vector3(moveDirection.x, moveDirection.y, 0f) * moveSpeed * Time.deltaTime;
+        
+
 
         //Validar que la nueva posición esté dentro de los límites permitidos
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
@@ -49,6 +63,7 @@ public class PlayerController : MonoBehaviour
         //Establecer la nueva posición del jugador
         transform.position = newPosition;
     }
+   
 
     private void ShootBullet()
     {
@@ -98,7 +113,7 @@ public class PlayerController : MonoBehaviour
         if (alpha < -45)
         {
             print("down");
-            //spriteDown;
+            //spritedown
         }
         else if (alpha > 45)
         {
