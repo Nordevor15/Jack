@@ -12,12 +12,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
     public Rigidbody2D rb;
     public int direction;
+
     public GameObject spriteRight;
     public GameObject spriteLeft;
     public GameObject spriteUp;
     public GameObject spriteDown;
-    private Animator animator;
 
+    private Animator animator;
 
     private void Start()
     {
@@ -45,21 +46,9 @@ public class PlayerController : MonoBehaviour
         //Obtener la posición actual del jugador
         Vector3 currentPosition = transform.position;
 
-        //Establecer los límites permitidos
-        float minX = -8.47f;
-        float maxX = 8.29f;
-        float minY = -4.67f;
-        float maxY = 4.32f;
-
         //Calcular la nueva posición del jugador
         Vector3 newPosition = currentPosition + new Vector3(moveDirection.x, moveDirection.y, 0f) * moveSpeed * Time.deltaTime;
         
-
-
-        //Validar que la nueva posición esté dentro de los límites permitidos
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
-
         //Establecer la nueva posición del jugador
         transform.position = newPosition;
     }
