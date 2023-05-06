@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8857082e94bc25e4caef86f70cf2505d
+guid: b13b91771289a734292f0153bc483a01
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_iguess_2_3
+      name: deco_0
       rect:
         serializedVersion: 2
-        x: 96
-        y: 31
-        width: 16
-        height: 11
+        x: 0
+        y: 16
+        width: 48
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee90bd855ce276046a14ec30ac92491d
-      internalID: -1326866665
+      spriteID: 6f164f26116de7f4d8d37885e0079383
+      internalID: -2136129832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_iguess_2_4
+      name: deco_1
       rect:
         serializedVersion: 2
-        x: 129
-        y: 15
-        width: 31
-        height: 28
+        x: 54
+        y: 35
+        width: 22
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f44aea899dd05f48a909d4f20ff9c0b
-      internalID: 1335619061
+      spriteID: f05beb86d156eb0408fefa4cd1e8d36d
+      internalID: 1260655507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_iguess_2_6
+      name: deco_2
       rect:
         serializedVersion: 2
-        x: 91
+        x: 89
+        y: 32
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a77a816ebfe5944ca8720c7e7af40e4
+      internalID: 1640861844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deco_3
+      rect:
+        serializedVersion: 2
+        x: 112
         y: 0
-        width: 37
-        height: 31
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc0164b39f1111440ae5adf43326096d
-      internalID: -184230525
+      spriteID: d5ceef22fb8b6664e9aa77795b54bfd8
+      internalID: 519455909
       vertices: []
       indices: 
       edges: []
@@ -178,13 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet_iguess_2_0: 1084739266
-      spritesheet_iguess_2_1: 1354964
-      spritesheet_iguess_2_2: 1354695953
-      spritesheet_iguess_2_3: -1326866665
-      spritesheet_iguess_2_4: 1335619061
-      spritesheet_iguess_2_5: -1264097701
-      spritesheet_iguess_2_6: -184230525
+      deco_0: -2136129832
+      deco_1: 1260655507
+      deco_2: 1640861844
+      deco_3: 519455909
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
