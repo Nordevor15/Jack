@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public GameObject spriteDown;
 
     private Animator animator;
+    private bool Ismoving;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("horizontal", horizontalInput);
         float verticalInput = Input.GetAxisRaw("Vertical");
