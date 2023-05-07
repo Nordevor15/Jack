@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5064155144770671599}
   - component: {fileID: 5064155144770671597}
   - component: {fileID: 5064155144770671596}
+  - component: {fileID: 3688086485860135909}
   - component: {fileID: 2587075274087432047}
   m_Layer: 0
   m_Name: EnemyEspada
@@ -140,6 +141,19 @@ MonoBehaviour:
   life: 10
   moveSpeed: 5
   playerController: {fileID: 0}
+--- !u!114 &3688086485860135909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064155144770671592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0b52b9906e2a84bbd0fe879eae7213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
 --- !u!95 &2587075274087432047
 Animator:
   serializedVersion: 5

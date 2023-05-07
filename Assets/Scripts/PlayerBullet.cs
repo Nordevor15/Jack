@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
+    public GameObject bulletPrefab;
+    public GameObject bullet2Prefab;
+    public float bulletSpeed = 50f;
+    public float bullet2Speed = 50f;
     // Start is called before the first frame update
     void Start()
     {
