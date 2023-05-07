@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject swarmerPrefab;
-    [SerializeField]
-    private float swarmerInterval = 3.5f;
+    public GameObject enemyPrefab; // Prefab del enemigo que queremos generar
+    public float spawnDelay = 2f; // Tiempo entre generación de enemigos
+    private float spawnTimer = 0f; // Contador de tiempo para la generación de enemigos
 
-    void Start()
+    void Update()
     {
-        StartCoroutine(spawnEnemy(swarmerInterval, swarmerPrefab));
+        // Contar el tiempo para la generación de enemigos
+        spawnTimer += Time.deltaTime;
+
+        // Si ha pasado suficiente tiempo, generar un enemigo en una ubicación aleatoria
+        if (spawnTimer >= spawnDelay)
+        {
+            SpawnEnemy();
+            spawnTimer = 0f; // Reiniciar el contador de tiempo
+        }
     }
 
-    private IEnumerator spawnEnemy(float interval, GameObject enemy)
+    void SpawnEnemy()
     {
-        yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
-        StartCoroutine(spawnEnemy(interval, enemy));
+        // Calcular una posición aleatoria en el área de juego
+        Vector2 spawnPosition = new Vector2(Random.Range(-10f, 10f), Random.Range(-5f, 5f));
+
+        // Instanciar un enemigo en la posición aleatoria
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }
 }

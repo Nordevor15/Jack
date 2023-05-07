@@ -769,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3292551, y: -13.971399, z: -10}
+  m_LocalPosition: {x: -1.1126794, y: -13.95113, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9906,7 +9906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 723010344}
   - component: {fileID: 723010343}
-  - component: {fileID: 723010342}
+  - component: {fileID: 723010345}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -9914,20 +9914,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &723010342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723010341}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177d146d64a22cd4d9e89815e8b873ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swarmerPrefab: {fileID: 5064155144770671592, guid: 62fd35e8b426e88458c2b524418761b7, type: 3}
-  swarmerInterval: 3.5
 --- !u!212 &723010343
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9995,6 +9981,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &723010345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723010341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177d146d64a22cd4d9e89815e8b873ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 211752629}
+  spawnDelay: 2
 --- !u!1 &843037183
 GameObject:
   m_ObjectHideFlags: 0
@@ -10059,7 +10059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843037183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0796994, y: -3.0978107, z: 0}
+  m_LocalPosition: {x: 2.362235, y: -3.1180801, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10978,6 +10978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  life: 10
 --- !u!1 &1779451947
 GameObject:
   m_ObjectHideFlags: 0
@@ -12833,6 +12834,10 @@ PrefabInstance:
     - target: {fileID: 5064155144770671592, guid: 62fd35e8b426e88458c2b524418761b7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064155144770671592, guid: 62fd35e8b426e88458c2b524418761b7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy1
       objectReference: {fileID: 0}
     - target: {fileID: 5064155144770671593, guid: 62fd35e8b426e88458c2b524418761b7, type: 3}
       propertyPath: m_Sprite

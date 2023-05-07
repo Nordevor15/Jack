@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class move2 : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class move2 : MonoBehaviour
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
     private Animator animator;
+    public int life = 10;
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -30,5 +32,18 @@ public class move2 : MonoBehaviour
     {
         playerRB.MovePosition(playerRB.position + moveInput * speed * Time.deltaTime);
 
+    }
+    //si colsiiona con un enemigo pierde vida
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy1")
+        {
+            life--;
+            if (life == 0)
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene("Defeat");
+            }
+        }
     }
 }
