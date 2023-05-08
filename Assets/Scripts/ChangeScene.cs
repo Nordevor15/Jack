@@ -6,15 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public Button button;
-    public string sceneName;
-    void Awake()
+    
+   
+    public void Retry()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(Change);
+        SceneManager.LoadScene(2);
     }
-    void Change()
+    public void MainMenu()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(0);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
+
