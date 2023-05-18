@@ -9,6 +9,9 @@ TagManager:
   - Life
   - Bala1
   - Bala2
+  - FirePoint
+  - obstacle
+  - Obstacle
   layers:
   - Default
   - TransparentFX

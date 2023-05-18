@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public GameObject bullet2Prefab;
-    public float bulletSpeed = 50f;
-    public float bullet2Speed = 50f;
+    public float fuerzaDisparo = 10f;
+    public Transform puntoDisparo;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,31 +16,29 @@ public class PlayerBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShootBullet();
+        if(Input.GetButtonDown ("Fire1"))
+        {
+            ShootBullet();
+        } 
     }
 
     private void ShootBullet()
     {
-        if (Input.GetMouseButtonDown(0)) // bot髇 izquierdo
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 playerPos = transform.position;
-            Vector3 direction = (mousePos - playerPos).normalized;
+        // Se obtiene la posici贸n del puntero del mouse en el mundo
+        Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posicionMouse.z = 0f;
 
-            GameObject bullet = Instantiate(bulletPrefab, playerPos, Quaternion.identity);
-            Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-            bulletRigidbody.velocity = direction * bulletSpeed;
-        }
+        // Se calcula la direcci贸n en la que se debe mover la bala
+        Vector2 direccion = (posicionMouse - puntoDisparo.position).normalized;
 
-        else if (Input.GetMouseButtonDown(1)) // bot髇 derecho
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 playerPos = transform.position;
-            Vector3 direction = (mousePos - playerPos).normalized;
+        // Se instancia la bala
+        GameObject bala = Instantiate(bulletPrefab, puntoDisparo.position, puntoDisparo.rotation);
 
-            GameObject bullet = Instantiate(bullet2Prefab, playerPos, Quaternion.identity);
-            Rigidbody2D bullet2Rigidbody = bullet.GetComponent<Rigidbody2D>();
-            bullet2Rigidbody.velocity = direction * bullet2Speed;
-        }
+        // Se rota la bala para que apunte en la direcci贸n del movimiento
+        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+        bala.transform.rotation = Quaternion.AngleAxis(angulo, Vector3.forward);
+
+        // Se le a帽ade fuerza a la bala para que se mueva en la direcci贸n calculada
+        bala.GetComponent<Rigidbody2D>().AddForce(direccion * fuerzaDisparo, ForceMode2D.Impulse);
     }
 }

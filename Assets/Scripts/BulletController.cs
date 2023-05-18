@@ -32,5 +32,30 @@ public class BulletController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.tag == "Obstacle")
+        {
+            DestroyBullet();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            DestroyBullet();
+        }
+    }
+
+    void DestroyBullet()
+    {
+        // Desactivar el Collider2D para evitar futuras colisiones
+        GetComponent<Collider2D>().enabled = false;
+        
+        // Desactivar el Rigidbody2D para detener el movimiento de la bala
+        GetComponent<Rigidbody2D>().simulated = false;
+        
+        // Esperar un pequeño tiempo para asegurar que la bala se ha detenido
+        // y luego destruirla
+        Destroy(gameObject, 0.1f);
     }
 }
