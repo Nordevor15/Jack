@@ -57,4 +57,12 @@ public class EnemyMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void TakeDamage(int damage)
+    {
+        life -= damage;
+        if (life <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

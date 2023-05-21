@@ -2131,7 +2131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3293912, y: -13.97141, z: -10}
+  m_LocalPosition: {x: -1.1228269, y: -13.95105, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12150,7 +12150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843037183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.079835534, y: -3.0978003, z: 0}
+  m_LocalPosition: {x: 2.3723826, y: -3.1181602, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13889,6 +13889,7 @@ GameObject:
   - component: {fileID: 1639879951}
   - component: {fileID: 1639879953}
   - component: {fileID: 1639879954}
+  - component: {fileID: 1639879955}
   m_Layer: 0
   m_Name: Jack
   m_TagString: Player
@@ -14084,6 +14085,21 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7221053446472605996, guid: cf08f4638992229428ba7a1966fb9da9, type: 3}
   fuerzaDisparo: 10
   puntoDisparo: {fileID: 6687185}
+--- !u!114 &1639879955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639879945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449255b8e9dd9d94c8c0a790ebfec77f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDistance: 2
+  enemyTag: Enemy1
+  attackDamage: 1
 --- !u!1 &1779451947
 GameObject:
   m_ObjectHideFlags: 0
