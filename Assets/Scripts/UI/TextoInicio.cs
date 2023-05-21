@@ -9,9 +9,6 @@ public class TextoInicio : MonoBehaviour
     {
         Time.timeScale = 0f;
     }
-
-    
-
     public void boton()
     {
         Time.timeScale = 1f;
