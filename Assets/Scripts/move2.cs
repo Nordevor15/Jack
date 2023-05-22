@@ -25,7 +25,7 @@ public class move2 : MonoBehaviour
         animator.SetFloat("horizontal", moveX);
         animator.SetFloat("vertical", moveY);
         animator.SetFloat("speed", moveInput.sqrMagnitude);
-        if (moveInput.x != 0) moveInput.y = 0;
+        
     }
 
     private void FixedUpdate()

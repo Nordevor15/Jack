@@ -55,3 +55,12 @@ TagManager:
   - name: DEco
     uniqueID: 884227133
     locked: 0
+  - name: Player
+    uniqueID: 1288891771
+    locked: 0
+  - name: Item
+    uniqueID: 1480463441
+    locked: 0
+  - name: Enemies
+    uniqueID: 760791575
+    locked: 0
