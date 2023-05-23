@@ -9,24 +9,24 @@ public class Spawner : MonoBehaviour
     public float spawnDelay = 2f; // Tiempo entre generación de enemigos
     private float spawnTimer = 0f; // Contador de tiempo para la generación de enemigos
     private int enemyCount = 0; // Contador de enemigos generados
-    private int enemyRemaining = 20; // Cantidad total de enemigos en la escena
+    public int enemyRemaining = 20; // Cantidad total de enemigos en la escena. La hacemos pública para acceder desde otro script.
 
     void Update()
     {
-        // Contar el tiempo para la generación de enemigos
+    // Contar el tiempo para la generación de enemigos
         spawnTimer += Time.deltaTime;
 
-        // Si ha pasado suficiente tiempo, no se han generado todos los enemigos y todavía quedan enemigos en la escena, generar un enemigo en una ubicación aleatoria
-        if (spawnTimer >= spawnDelay && enemyCount < 20 && enemyRemaining > 0)
-        {
-            SpawnEnemy();
-            spawnTimer = 0f; // Reiniciar el contador de tiempo
-        }
+    // Si ha pasado suficiente tiempo y no se han generado todos los enemigos, generar un enemigo en una ubicación aleatoria
+    if (spawnTimer >= spawnDelay && enemyCount < 20)
+    {
+        SpawnEnemy();
+        spawnTimer = 0f; // Reiniciar el contador de tiempo
+    }
 
-        // Verificar si no quedan enemigos en la escena y cargar la escena de victoria
-        if (enemyRemaining == 0)
+    // Verificar si no quedan enemigos en la escena y cargar la escena de victoria
+    if (enemyRemaining == 0)
         {
-            SceneManager.LoadScene("Victory"); // Reemplaza "VictoryScene" con el nombre de tu escena de victoria
+        SceneManager.LoadScene("Victory"); // Reemplaza "VictoryScene" con el nombre de tu escena de victoria
         }
     }
 
@@ -39,6 +39,5 @@ public class Spawner : MonoBehaviour
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
         enemyCount++; // Incrementar el contador de enemigos generados
-        enemyRemaining--; // Decrementar la cantidad total de enemigos en la escena
     }
 }

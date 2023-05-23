@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public int life = 10;
     public float moveSpeed = 5f; 
+    private Spawner spawner; // referencia al Spawner
 
     
     public PlayerController playerController; // referencia al PlayerController
@@ -15,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // obtener la referencia al Rigidbody2D
+        spawner = FindObjectOfType<Spawner>(); // obtener la referencia al Spawner
     }
 
     void FixedUpdate()
@@ -56,6 +58,11 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    void OnDestroy()
+    {
+        // si el enemigo es destruido, decrementar el contador de enemigos restantes
+        spawner.enemyRemaining--;
     }
     public void TakeDamage(int damage)
     {
