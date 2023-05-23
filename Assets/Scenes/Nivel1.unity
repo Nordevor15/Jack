@@ -11821,6 +11821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 211752629}
   spawnDelay: 2
+  enemyRemaining: 20
 --- !u!61 &723010347
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13495,8 +13496,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409293868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3877574, y: 7.4088855, z: 0}
-  m_LocalScale: {x: 1, y: 10.58201, z: 1}
+  m_LocalPosition: {x: -1.3877574, y: 8.4482, z: 0}
+  m_LocalScale: {x: 1, y: 8.503703, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2089989147}
