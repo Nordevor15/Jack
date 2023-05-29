@@ -11,7 +11,7 @@ public class AtaqueCerca : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackDistance);
 

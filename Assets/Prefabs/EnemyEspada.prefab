@@ -12,12 +12,14 @@ GameObject:
   - component: {fileID: 5064155144770671593}
   - component: {fileID: 5064155144770671599}
   - component: {fileID: 5064155144770671597}
+  - component: {fileID: 3842206018198202546}
   - component: {fileID: 5064155144770671596}
   - component: {fileID: 3688086485860135909}
-  - component: {fileID: 2587075274087432047}
+  - component: {fileID: 211752635}
+  - component: {fileID: 1398295990643075261}
   m_Layer: 0
   m_Name: EnemyEspada
-  m_TagString: Untagged
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +31,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5064155144770671592}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.882, y: -2.5341, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1703063664, guid: e6a548207220ddd498dbcbad1404708a, type: 3}
+  m_Sprite: {fileID: 1883948184, guid: e6a548207220ddd498dbcbad1404708a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,6 +128,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3842206018198202546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064155144770671592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb064e04542b1ea4db798f0bfcf3f0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5064155144770671596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4eb5e6ed36e94d4fb4b8b3793da91dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 10
-  moveSpeed: 5
+  life: 5
+  moveSpeed: 3
   playerController: {fileID: 0}
 --- !u!114 &3688086485860135909
 MonoBehaviour:
@@ -154,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 10
---- !u!95 &2587075274087432047
+--- !u!95 &211752635
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -162,7 +176,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5064155144770671592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 63fb805d89c38bc4d9a720d382d4a70e, type: 2}
   m_CullingMode: 0
@@ -175,3 +189,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1398295990643075261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064155144770671592}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb064e04542b1ea4db798f0bfcf3f0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
