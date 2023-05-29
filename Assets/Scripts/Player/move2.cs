@@ -33,7 +33,6 @@ public class move2 : MonoBehaviour
         playerRB.MovePosition(playerRB.position + moveInput * speed * Time.deltaTime);
 
     }
-    //si colsiiona con un enemigo pierde vida
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy1")
@@ -44,6 +43,11 @@ public class move2 : MonoBehaviour
                 Destroy(gameObject);
                 SceneManager.LoadScene("Defeat");
             }
+        }
+        if (collision.gameObject.tag == "Life")
+        {
+            life+=5;
+            Destroy(collision.gameObject);
         }
     }
 }

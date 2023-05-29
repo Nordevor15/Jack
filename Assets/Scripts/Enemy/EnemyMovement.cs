@@ -8,8 +8,6 @@ public class EnemyMovement : MonoBehaviour
     public float moveSpeed = 5f; 
     private Spawner spawner;
 
-    
-    public PlayerController playerController;
 
     private Rigidbody2D rb;
 
@@ -18,25 +16,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spawner = FindObjectOfType<Spawner>();
     }
-
-    void FixedUpdate()
-    {
-        //MoveTowardsPlayer();
-    }
-    void MoveTowardsPlayer()
-    {
-        // si el jugador está vivo
-        if (playerController.life > 0)
-        {
-            Vector2 direction = playerController.transform.position - transform.position;
-            direction.Normalize();
-            rb.velocity = direction * moveSpeed;
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
-    }
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bala1")
@@ -54,12 +34,19 @@ public class EnemyMovement : MonoBehaviour
     }
     void OnDestroy()
     {
-        spawner.enemyRemaining--;
+        spawner.enemy--;
     }
     public void TakeDamage(int damage)
     {
         life -= damage;
         if (life <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
